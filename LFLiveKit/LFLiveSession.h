@@ -71,6 +71,9 @@ typedef NS_ENUM(NSInteger,LFLiveCaptureTypeMask) {
 /** The captureDevicePosition control camraPosition ,default front*/
 @property (nonatomic, assign) AVCaptureDevicePosition captureDevicePosition;
 
+/** 是否硬件编码 **/
+@property (nonatomic, assign) BOOL useHardwareEncode;
+
 /** The beautyFace control capture shader filter empty or beautiy */
 @property (nonatomic, assign) BOOL beautyFace;
 

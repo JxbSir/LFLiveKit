@@ -374,10 +374,10 @@
 
 - (id<LFVideoEncoding>)videoEncoder {
     if (!_videoEncoder) {
-        if([[UIDevice currentDevice].systemVersion floatValue] < 8.0){
-            _videoEncoder = [[LFH264VideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
-        }else{
+        if([[UIDevice currentDevice].systemVersion floatValue] >= 8.0 && self.useHardwareEncode){
             _videoEncoder = [[LFHardwareVideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
+        } else{
+            _videoEncoder = [[LFH264VideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
         }
         [_videoEncoder setDelegate:self];
     }
