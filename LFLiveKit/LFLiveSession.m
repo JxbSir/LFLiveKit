@@ -10,6 +10,7 @@
 #import "LFVideoCapture.h"
 #import "LFAudioCapture.h"
 #import "LFHardwareVideoEncoder.h"
+#import "XBHardwareH265VideoEncoder.h"
 #import "LFHardwareAudioEncoder.h"
 #import "LFH264VideoEncoder.h"
 #import "LFStreamRTMPSocket.h"
@@ -375,7 +376,11 @@
 - (id<LFVideoEncoding>)videoEncoder {
     if (!_videoEncoder) {
         if([[UIDevice currentDevice].systemVersion floatValue] >= 8.0 && self.useHardwareEncode){
-            _videoEncoder = [[LFHardwareVideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
+            if ([[UIDevice currentDevice].systemVersion floatValue] >= 11.0) {
+                _videoEncoder = [[XBHardwareH265VideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
+            } else {
+                _videoEncoder = [[LFHardwareVideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
+            }
         } else{
             _videoEncoder = [[LFH264VideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
         }
