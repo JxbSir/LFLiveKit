@@ -45,6 +45,9 @@ typedef NS_ENUM (NSUInteger, LFLiveVideoQuality){
 
 @interface LFLiveVideoConfiguration : NSObject<NSCoding, NSCopying>
 
+/// Profile Level
+@property (nonatomic, strong) NSString *profileLevel;
+
 /// 默认视频配置
 + (instancetype)defaultConfiguration;
 /// 视频配置(质量)

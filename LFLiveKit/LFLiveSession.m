@@ -375,12 +375,24 @@
 
 - (id<LFVideoEncoding>)videoEncoder {
     if (!_videoEncoder) {
-        if([[UIDevice currentDevice].systemVersion floatValue] >= 8.0 && self.useHardwareEncode){
-//            if ([[UIDevice currentDevice].systemVersion floatValue] >= 11.0) {
-//                _videoEncoder = [[XBHardwareH265VideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
-//            } else {
-                _videoEncoder = [[LFHardwareVideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
-//            }
+        if([[UIDevice currentDevice].systemVersion floatValue] >= 8.0){
+            switch (self.encodeType) {
+                case LFLiveEncodeX264:
+                    _videoEncoder = [[LFH264VideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
+                    break;
+                case LFLiveEncodeH264_Main:
+                    _videoConfiguration.profileLevel = @"main";
+                    _videoEncoder = [[LFHardwareVideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
+                    break;
+                case LFLiveEncodeH264_Baseline:
+                    _videoConfiguration.profileLevel = @"base";
+                    _videoEncoder = [[LFHardwareVideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
+                    break;
+                case LFLiveEncodrH264_High:
+                    _videoConfiguration.profileLevel = @"high";
+                    _videoEncoder = [[LFHardwareVideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
+                    break;
+            }
         } else{
             _videoEncoder = [[LFH264VideoEncoder alloc] initWithVideoStreamConfiguration:_videoConfiguration];
         }

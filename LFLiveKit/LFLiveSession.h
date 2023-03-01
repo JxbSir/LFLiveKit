@@ -16,6 +16,12 @@
 #import "LFLiveVideoConfiguration.h"
 #import "LFLiveDebug.h"
 
+typedef NS_ENUM(NSInteger,LFLiveEncodeType) {
+    LFLiveEncodeX264,
+    LFLiveEncodeH264_Baseline,
+    LFLiveEncodeH264_Main,
+    LFLiveEncodrH264_High,
+};
 
 
 typedef NS_ENUM(NSInteger,LFLiveCaptureType) {
@@ -71,8 +77,8 @@ typedef NS_ENUM(NSInteger,LFLiveCaptureTypeMask) {
 /** The captureDevicePosition control camraPosition ,default front*/
 @property (nonatomic, assign) AVCaptureDevicePosition captureDevicePosition;
 
-/** 是否硬件编码 **/
-@property (nonatomic, assign) BOOL useHardwareEncode;
+/** 编码方式 **/
+@property (nonatomic, assign) LFLiveEncodeType encodeType;
 
 /** The beautyFace control capture shader filter empty or beautiy */
 @property (nonatomic, assign) BOOL beautyFace;
