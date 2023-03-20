@@ -663,6 +663,18 @@
 		84D8B5E81D768B6E00752B56 /* LFStreamSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D8B5B81D768B6E00752B56 /* LFStreamSocket.h */; };
 		84D8B5E91D768B6E00752B56 /* NSMutableArray+LFAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D8B5B91D768B6E00752B56 /* NSMutableArray+LFAdd.h */; };
 		84D8B5EA1D768B6E00752B56 /* NSMutableArray+LFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B5BA1D768B6E00752B56 /* NSMutableArray+LFAdd.m */; };
+		F345A04129C8348E00956012 /* DenoiseUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F345A03B29C8348E00956012 /* DenoiseUtils.h */; };
+		F345A04229C8348E00956012 /* DenoiseUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F345A03B29C8348E00956012 /* DenoiseUtils.h */; };
+		F345A04329C8348E00956012 /* timing.h in Headers */ = {isa = PBXBuildFile; fileRef = F345A03C29C8348E00956012 /* timing.h */; };
+		F345A04429C8348E00956012 /* timing.h in Headers */ = {isa = PBXBuildFile; fileRef = F345A03C29C8348E00956012 /* timing.h */; };
+		F345A04529C8348E00956012 /* noise_suppression.h in Headers */ = {isa = PBXBuildFile; fileRef = F345A03D29C8348E00956012 /* noise_suppression.h */; };
+		F345A04629C8348E00956012 /* noise_suppression.h in Headers */ = {isa = PBXBuildFile; fileRef = F345A03D29C8348E00956012 /* noise_suppression.h */; };
+		F345A04729C8348E00956012 /* dr_wav.h in Headers */ = {isa = PBXBuildFile; fileRef = F345A03E29C8348E00956012 /* dr_wav.h */; };
+		F345A04829C8348E00956012 /* dr_wav.h in Headers */ = {isa = PBXBuildFile; fileRef = F345A03E29C8348E00956012 /* dr_wav.h */; };
+		F345A04929C8348E00956012 /* DenoiseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F345A03F29C8348E00956012 /* DenoiseUtils.m */; };
+		F345A04A29C8348E00956012 /* DenoiseUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F345A03F29C8348E00956012 /* DenoiseUtils.m */; };
+		F345A04B29C8348E00956012 /* noise_suppression.c in Sources */ = {isa = PBXBuildFile; fileRef = F345A04029C8348E00956012 /* noise_suppression.c */; };
+		F345A04C29C8348E00956012 /* noise_suppression.c in Sources */ = {isa = PBXBuildFile; fileRef = F345A04029C8348E00956012 /* noise_suppression.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1097,6 +1109,12 @@
 		84D8B5B81D768B6E00752B56 /* LFStreamSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFStreamSocket.h; sourceTree = "<group>"; };
 		84D8B5B91D768B6E00752B56 /* NSMutableArray+LFAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+LFAdd.h"; sourceTree = "<group>"; };
 		84D8B5BA1D768B6E00752B56 /* NSMutableArray+LFAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+LFAdd.m"; sourceTree = "<group>"; };
+		F345A03B29C8348E00956012 /* DenoiseUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DenoiseUtils.h; sourceTree = "<group>"; };
+		F345A03C29C8348E00956012 /* timing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timing.h; sourceTree = "<group>"; };
+		F345A03D29C8348E00956012 /* noise_suppression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noise_suppression.h; sourceTree = "<group>"; };
+		F345A03E29C8348E00956012 /* dr_wav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dr_wav.h; sourceTree = "<group>"; };
+		F345A03F29C8348E00956012 /* DenoiseUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DenoiseUtils.m; sourceTree = "<group>"; };
+		F345A04029C8348E00956012 /* noise_suppression.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = noise_suppression.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1561,6 +1579,7 @@
 		84D8B5831D768B6E00752B56 /* LFLiveKit */ = {
 			isa = PBXGroup;
 			children = (
+				F345A03A29C8348E00956012 /* noise */,
 				84D8B5841D768B6E00752B56 /* capture */,
 				84D8B5891D768B6E00752B56 /* coder */,
 				84D8B59B1D768B6E00752B56 /* configuration */,
@@ -1678,6 +1697,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F345A03A29C8348E00956012 /* noise */ = {
+			isa = PBXGroup;
+			children = (
+				F345A03B29C8348E00956012 /* DenoiseUtils.h */,
+				F345A03C29C8348E00956012 /* timing.h */,
+				F345A03D29C8348E00956012 /* noise_suppression.h */,
+				F345A03E29C8348E00956012 /* dr_wav.h */,
+				F345A03F29C8348E00956012 /* DenoiseUtils.m */,
+				F345A04029C8348E00956012 /* noise_suppression.c */,
+			);
+			path = noise;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1697,19 +1729,23 @@
 				8495F6731DB8F1EE00542124 /* LFAudioCapture.h in Headers */,
 				8495F6741DB8F1EE00542124 /* LFVideoCapture.h in Headers */,
 				8495F6751DB8F1EE00542124 /* LFAVEncoder.h in Headers */,
+				F345A04629C8348E00956012 /* noise_suppression.h in Headers */,
 				8495F6761DB8F1EE00542124 /* LFMP4Atom.h in Headers */,
 				8495F6771DB8F1EE00542124 /* LFNALUnit.h in Headers */,
+				F345A04229C8348E00956012 /* DenoiseUtils.h in Headers */,
 				8495F6781DB8F1EE00542124 /* LFVideoEncoder.h in Headers */,
 				8495F6791DB8F1EE00542124 /* LFAudioEncoding.h in Headers */,
 				8495F67A1DB8F1EE00542124 /* LFH264VideoEncoder.h in Headers */,
 				8495F67B1DB8F1EE00542124 /* LFHardwareAudioEncoder.h in Headers */,
 				8495F67C1DB8F1EE00542124 /* LFHardwareVideoEncoder.h in Headers */,
+				F345A04829C8348E00956012 /* dr_wav.h in Headers */,
 				8495F67D1DB8F1EE00542124 /* LFVideoEncoding.h in Headers */,
 				8495F6801DB8F1EE00542124 /* LFGPUImageBeautyFilter.h in Headers */,
 				8495F6811DB8F1EE00542124 /* LFGPUImageEmptyFilter.h in Headers */,
 				8495F6891DB8F1EE00542124 /* LFStreamingBuffer.h in Headers */,
 				8495F68A1DB8F1EE00542124 /* LFStreamRTMPSocket.h in Headers */,
 				8495F68B1DB8F1EE00542124 /* LFStreamSocket.h in Headers */,
+				F345A04429C8348E00956012 /* timing.h in Headers */,
 				8495F68C1DB8F1EE00542124 /* NSMutableArray+LFAdd.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1726,6 +1762,7 @@
 				8435907D1DD1FEB600811FC7 /* GPUImageHoughTransformLineDetector.h in Headers */,
 				843590C71DD1FEB600811FC7 /* GPUImageOverlayBlendFilter.h in Headers */,
 				84D8B5DA1D768B6E00752B56 /* LFAudioFrame.h in Headers */,
+				F345A04129C8348E00956012 /* DenoiseUtils.h in Headers */,
 				8435911B1DD1FEB600811FC7 /* GPUImageThresholdEdgeDetectionFilter.h in Headers */,
 				843591111DD1FEB600811FC7 /* GPUImageSubtractBlendFilter.h in Headers */,
 				843590B51DD1FEB600811FC7 /* GPUImageMovie.h in Headers */,
@@ -1755,12 +1792,14 @@
 				84D8B5DC1D768B6E00752B56 /* LFFrame.h in Headers */,
 				843591551DD1FEB600811FC7 /* handshake.h in Headers */,
 				84D8B5D71D768B6E00752B56 /* LFLiveKit.h in Headers */,
+				F345A04529C8348E00956012 /* noise_suppression.h in Headers */,
 				8435904D1DD1FEB600811FC7 /* GPUImageFalseColorFilter.h in Headers */,
 				843590111DD1FEB600811FC7 /* GPUImageCannyEdgeDetectionFilter.h in Headers */,
 				8435906F1DD1FEB600811FC7 /* GPUImageHazeFilter.h in Headers */,
 				8435903F1DD1FEB600811FC7 /* GPUImageDirectionalSobelEdgeDetectionFilter.h in Headers */,
 				843590631DD1FEB600811FC7 /* GPUImageGaussianSelectiveBlurFilter.h in Headers */,
 				843591371DD1FEB600811FC7 /* GPUImageVignetteFilter.h in Headers */,
+				F345A04729C8348E00956012 /* dr_wav.h in Headers */,
 				843591071DD1FEB600811FC7 /* GPUImageSolidColorGenerator.h in Headers */,
 				843590A71DD1FEB600811FC7 /* GPUImageMaskFilter.h in Headers */,
 				843590431DD1FEB600811FC7 /* GPUImageDivideBlendFilter.h in Headers */,
@@ -1927,6 +1966,7 @@
 				843590C11DD1FEB600811FC7 /* GPUImageOpacityFilter.h in Headers */,
 				843590D91DD1FEB600811FC7 /* GPUImagePosterizeFilter.h in Headers */,
 				843590FD1DD1FEB600811FC7 /* GPUImageSmoothToonFilter.h in Headers */,
+				F345A04329C8348E00956012 /* timing.h in Headers */,
 				8435914A1DD1FEB600811FC7 /* GPUImagePicture.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1998,6 +2038,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 84D8B3861D7574D600752B56;
@@ -2114,6 +2155,7 @@
 				8435919D1DD20A7E00811FC7 /* GPUImageFourInputFilter.m in Sources */,
 				8435919E1DD20A7E00811FC7 /* GPUImageFramebuffer.m in Sources */,
 				8435919F1DD20A7E00811FC7 /* GPUImageFramebufferCache.m in Sources */,
+				F345A04C29C8348E00956012 /* noise_suppression.c in Sources */,
 				843591A01DD20A7E00811FC7 /* GPUImageGammaFilter.m in Sources */,
 				843591A11DD20A7E00811FC7 /* GPUImageGaussianBlurFilter.m in Sources */,
 				843591A21DD20A7E00811FC7 /* GPUImageGaussianBlurPositionFilter.m in Sources */,
@@ -2170,6 +2212,7 @@
 				843591D51DD20A7F00811FC7 /* GPUImageOverlayBlendFilter.m in Sources */,
 				843591D61DD20A7F00811FC7 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				843591D71DD20A7F00811FC7 /* GPUImagePerlinNoiseFilter.m in Sources */,
+				F345A04A29C8348E00956012 /* DenoiseUtils.m in Sources */,
 				843591D81DD20A7F00811FC7 /* GPUImagePinchDistortionFilter.m in Sources */,
 				843591D91DD20A7F00811FC7 /* GPUImagePixellateFilter.m in Sources */,
 				843591DA1DD20A7F00811FC7 /* GPUImagePixellatePositionFilter.m in Sources */,
@@ -2321,6 +2364,7 @@
 				843590A81DD1FEB600811FC7 /* GPUImageMaskFilter.m in Sources */,
 				8435900E1DD1FEB600811FC7 /* GPUImageBuffer.m in Sources */,
 				843591471DD1FEB600811FC7 /* GPUImageMovieWriter.m in Sources */,
+				F345A04B29C8348E00956012 /* noise_suppression.c in Sources */,
 				843590421DD1FEB600811FC7 /* GPUImageDissolveBlendFilter.m in Sources */,
 				8435902C1DD1FEB600811FC7 /* GPUImageColourFASTFeatureDetector.m in Sources */,
 				843590E61DD1FEB600811FC7 /* GPUImageRGBErosionFilter.m in Sources */,
@@ -2377,6 +2421,7 @@
 				84D8B5C91D768B6E00752B56 /* LFH264VideoEncoder.mm in Sources */,
 				843590701DD1FEB600811FC7 /* GPUImageHazeFilter.m in Sources */,
 				8435908E1DD1FEB600811FC7 /* GPUImageLanczosResamplingFilter.m in Sources */,
+				F345A04929C8348E00956012 /* DenoiseUtils.m in Sources */,
 				8435901E1DD1FEB600811FC7 /* GPUImageColorBurnBlendFilter.m in Sources */,
 				843590C61DD1FEB600811FC7 /* GPUImageOutput.m in Sources */,
 				843590E01DD1FEB600811FC7 /* GPUImageRawDataOutput.m in Sources */,
